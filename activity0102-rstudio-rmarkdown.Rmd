@@ -39,19 +39,24 @@ r = -0.0645
 
 ### Exercise 3
 
-(Add code and narrative as needed. Note that the R chunks are labeled with `plot-star` and `cor-star` to provide spaces to place the code for plotting and calculating the correlation coefficient. To finish, clean up the narrative by removing these instructions.)
-
-Blah blah blah...
+Plot the data in the star dataset:
 
 ```{r plot-star}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
 
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-I'm some text, you should replace me with more meaningful text...
+Correlation coefficient between x and y in star dataset:
 
 ```{r cor-star}
-
+star_data %>%
+  summarize(r = cor(x, y))
 ```
+
+This correlation coefficient for star closer to zero than the dino dataset, so it is weaker.
 
 ### Exercise 4
 
