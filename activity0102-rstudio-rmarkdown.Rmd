@@ -5,6 +5,8 @@ date: "8/26/2019"
 output: 
   html_document: 
     fig_width: 5
+    highlight: haddock
+    theme: cerulean
 ---
 
 ### Load packages
